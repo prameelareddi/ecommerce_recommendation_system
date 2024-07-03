@@ -1,0 +1,83 @@
+This Python script is a FastAPI application that provides an API for searching products based on a user query. Here's a breakdown of its main components:
+
+Importing Libraries: The script imports necessary libraries such as FastAPI, HTTPException from FastAPI, JSONResponse from fastapi.responses, pandas, nltk, SnowballStemmer from nltk.stem.snowball, TfidfVectorizer from sklearn.feature_extraction.text, and cosine_similarity from sklearn.metrics.pairwise.
+
+Creating FastAPI App: The FastAPI app is created with the name app.
+
+Loading Dataset: The script loads a dataset from a CSV file named 'data.csv' using pandas.
+
+Tokenization and Stemming: It defines a function tokenize_and_stem() to tokenize and stem the text data from the 'Title' and 'Description' columns of the dataset.
+
+Vectorization and Cosine Similarity: It defines a TF-IDF vectorizer and a function cosine_sim() to calculate the cosine similarity between the user query and each product description in the dataset.
+
+Search Function: The /search endpoint is defined to handle user search queries. It computes the similarity between the user query and each product description, sorts the products based on similarity, retrieves related products from the same category, saves the user search history to a CSV file, and returns search results along with related products and past user searches as JSON responses.
+
+Endpoint for Past Searches: The /past_searches endpoint is defined to retrieve past user searches. It reads the user search history from a CSV file and returns a random subset of past searches as JSON response.
+
+Running the App: Finally, the script runs the FastAPI app using uvicorn on localhost port 8000.
+
+Overall, this script provides an API for searching products based on user queries and retrieving past user searches. It utilizes natural language processing techniques like tokenization, stemming, and TF-IDF vectorization to perform similarity-based search.
+
+========================================================================================================================================================================================================
+
+Content-Based Product Recommendation System
+-------------------------------------------------
+Overview
+
+The Content-Based Product Recommendation System is a project designed to recommend fashion products to users based on the visual features of the products. It utilizes a machine learning model to extract features from product images and generate embeddings. These embeddings are then used to find similar products and provide recommendations to users in real-time.
+
+Purpose
+The main purpose of this project is to enhance the user experience by offering personalized product recommendations. By analyzing the visual features of products, the system can suggest items that are visually similar to those the user has shown interest in. This can help users discover new products that match their preferences and style.
+
+Functionality
+Feature Extraction: The project extracts features from fashion product images using a pre-trained ResNet50 model. These features capture the visual characteristics of each product.
+
+Embedding Generation: The extracted features are processed and normalized to generate embeddings. These embeddings represent each product in a high-dimensional space, where similar products are closer together.
+
+Real-Time Recommendations: A Streamlit web application is provided to users, allowing them to upload images of products they like. The system then processes these images, extracts their features, and compares them with the embeddings of other products to find visually similar items. The top recommendations are displayed to the user in real-time.
+
+Dataset
+The project uses a dataset of fashion product images. This dataset contains a variety of products from different categories, such as clothing, shoes, and accessories. Each product image is associated with metadata, including its category and description.
+
+Usage
+To use the Content-Based Product Recommendation System, follow these steps:
+
+Clone the Repository: Clone the project repository from the provided GitHub link.
+Install Dependencies: Ensure you have all the required dependencies installed by following the instructions in the README file.
+Generate Image Embeddings: Run the script to extract features from the product images and generate embeddings.
+Run the Streamlit App: Launch the Streamlit web application to interact with the recommendation system. Upload images of products you like to receive personalized recommendations.
+Conclusion
+The Content-Based Product Recommendation System offers an innovative approach to product recommendation by leveraging visual features. By analyzing the visual characteristics of products, the system can provide personalized recommendations that match the user's preferences. This enhances the user experience and helps users discover new products that align with their style and interests.
+
+Now, let's proceed with the documentation for the Collaborative Product Recommendation System.
+
+=======================================================================================================================================================================================================
+
+Collaborative Product Recommendation System
+------------------------------------------------
+Overview
+
+The Collaborative Product Recommendation System is a project that enables users to search for products and receive recommendations based on their preferences and past interactions. It utilizes FastAPI to provide an efficient and scalable API for product search and recommendation.
+
+Purpose
+The main purpose of this project is to enhance the shopping experience for users by offering personalized product recommendations. By analyzing past user interactions and search queries, the system can suggest relevant products that match the user's interests and preferences.
+
+Functionality
+Search API: The system provides a search API endpoint that allows users to search for products based on keywords or product names. Users can submit a query, and the system will return a list of relevant products.
+
+Recommendation API: In addition to search functionality, the system offers a recommendation API endpoint. Users can receive personalized product recommendations based on their past interactions and preferences. The system analyzes past user behavior and identifies similar users or products to generate relevant recommendations.
+
+Past Searches API: The system also includes an API endpoint to display a list of past user searches. Users can view their search history and access previously searched products for easy reference.
+
+Dataset
+The project requires a dataset of product information, including product names, descriptions, and categories. This dataset serves as the basis for product search and recommendation algorithms.
+
+Usage
+To use the Collaborative Product Recommendation System, follow these steps:
+
+Clone the Repository: Clone the project repository from the provided GitHub link.
+Install Dependencies: Ensure you have all the required dependencies installed by following the instructions in the README file.
+Run the FastAPI Application: Launch the FastAPI application to start the server. The API endpoints will be accessible for product search and recommendation.
+Access the API Endpoints: Use HTTP requests to interact with the API endpoints. You can search for products, receive recommendations, and view past searches by accessing the respective API endpoints.
+Conclusion
+The Collaborative Product Recommendation System provides a user-friendly and efficient solution for product search and recommendation. By leveraging user data and past interactions, the system can offer personalized recommendations that enhance the shopping experience and help users discover new products of inter
